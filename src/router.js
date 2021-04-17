@@ -10,6 +10,7 @@ const RouterComponent = () => {
       return (
             <div>
                   <Switch>
+                        <Route path='/react_live_website' exact component={HomeComponent}></Route>
                         <Route path='/' exact component={HomeComponent}></Route>
                         <Route path='/home' exact component={HomeComponent}></Route>
                         <Route path='/about' exact component={AboutComponent}></Route>
