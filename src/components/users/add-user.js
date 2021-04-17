@@ -25,7 +25,7 @@ const AddUser = () => {
 
       const formSubmit = (e)=>{
             e.preventDefault();
-            alert(`your data is ${inputUser.name}`);
+            console.log(setInputUser(inputUser));
       }
 
       return (
