@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router';
 
 const HomeComponent = () => {
 
+      const history = useHistory();
       const [users, setUsers] = useState([]);
 
       useEffect(()=>{
@@ -11,7 +13,7 @@ const HomeComponent = () => {
 
       const loadUsers = async()=> {
             const res = await axios.get('http://localhost:3001/users');
-            console.log(res.data);
+            console.log(res.data.reverse());
             setUsers(res.data);
       }
 
@@ -40,7 +42,7 @@ const HomeComponent = () => {
                                                       <td>
                                                             <div className="action-name">
                                                                   <button className="btn btn-primary mr-2">View</button>
-                                                                  <button className="btn btn-outline-primary mr-2">Edit</button>
+                                                                  <button className="btn btn-outline-primary mr-2" onClick={()=>history.push('/users/edit')}>Edit</button>
                                                                   <button className="btn btn-danger">Delete</button>
                                                             </div>
                                                       </td>

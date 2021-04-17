@@ -5,6 +5,7 @@ import ContactComponent from './components/pages/contact'
 import Error from './components/pages/error'
 import HomeComponent from './components/pages/home'
 import AddUser from './components/users/add-user'
+import EditUser from './components/users/edit-user'
 
 const RouterComponent = () => {
       return (
@@ -16,6 +17,7 @@ const RouterComponent = () => {
                         <Route path='/about' exact component={AboutComponent}></Route>
                         <Route path='/contact' exact component={ContactComponent}></Route>
                         <Route path='/users/add' exact component={AddUser}></Route>
+                        <Route path='/users/edit/:id' exact component={EditUser}></Route>
                         <Route component={Error}></Route>
                   </Switch>
             </div>

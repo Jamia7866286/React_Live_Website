@@ -1,6 +1,10 @@
+import axios from 'axios';
 import React, {useState} from 'react'
+import { useHistory } from 'react-router';
 
 const AddUser = () => {
+
+      const history = useHistory();
 
       const [inputUser, setInputUser] = useState(
             {
@@ -8,7 +12,7 @@ const AddUser = () => {
                   username: '',
                   email: '',
                   phone: '',
-                  websitename: ''
+                  website: ''
             }
       );
 
@@ -23,9 +27,10 @@ const AddUser = () => {
             });
       }
 
-      const formSubmit = (e)=>{
+      const formSubmit = async(e)=>{
             e.preventDefault();
-            console.log(setInputUser(inputUser));
+            await axios.post('http://localhost:3001/users', inputUser);
+            history.push('/');
       }
 
       return (
@@ -50,7 +55,7 @@ const AddUser = () => {
                               className="form-control" placeholder="Enter your phone number..." />
                         </div>
                         <div className="mb-4">
-                              <input type="text" onChange={inputChange} value={inputUser.websitename} name="websitename"
+                              <input type="text" onChange={inputChange} value={inputUser.website} name="website"
                               className="form-control" placeholder="Enter your website name..." />
                         </div>
                         <button onClick={formSubmit} className="btn btn-primary w-100">Add User</button>
