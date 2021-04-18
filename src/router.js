@@ -6,6 +6,7 @@ import Error from './components/pages/error'
 import HomeComponent from './components/pages/home'
 import AddUser from './components/users/add-user'
 import EditUser from './components/users/edit-user'
+import ViewUser from './components/users/view-user'
 
 const RouterComponent = () => {
       return (
@@ -18,6 +19,7 @@ const RouterComponent = () => {
                         <Route path='/contact' exact component={ContactComponent}></Route>
                         <Route path='/users/add' exact component={AddUser}></Route>
                         <Route path='/users/edit/:id' exact component={EditUser}></Route>
+                        <Route path='/users/view/:id' exact component={ViewUser}></Route>
                         <Route component={Error}></Route>
                   </Switch>
             </div>
