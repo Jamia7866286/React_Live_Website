@@ -1,3 +1,13 @@
 .action-name {
       width: 201px;
 }
+
+tr{
+      &.no-data{
+            &:hover{
+                  td{
+                        background: transparent;
+                  }
+            }
+      }
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 import { useHistory, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const EditUser = () => {
 
@@ -46,8 +47,8 @@ const EditUser = () => {
 
       return (
             <div className="container mt-5 w-50 mx-auto">
-                  <form className="border py-4 px-5 rounded">
-                        <h2 className="text-center mb-4">Edit User</h2>
+                  <form className="border py-4 px-5 rounded text-center">
+                        <h2 className="mb-4">Edit User</h2>
                         <div className="mb-4">
                               <input type="text" 
                               className="form-control" onChange={inputChange} value={inputUser.name} name="name"
@@ -69,7 +70,8 @@ const EditUser = () => {
                               <input type="text" onChange={inputChange} value={inputUser.website} name="website"
                               className="form-control" placeholder="Enter your website name..." />
                         </div>
-                        <button className="btn btn-primary w-100" onClick={updateValue}>Update</button>
+                        <button className="btn btn-primary" onClick={updateValue}>Update</button>
+                        <Link className="btn btn-danger ml-2" to="/">Cancel</Link>
                   </form>
             </div>
       )

@@ -41,25 +41,31 @@ const HomeComponent = () => {
                         <tbody>
 
                               {
-                                    users.map((itemVal, index)=>{
-                                          return (
-                                                <tr key={index}>
-                                                      <th scope="row">{itemVal.id}</th>
-                                                      <td>{itemVal.name}</td>
-                                                      <td>{itemVal.username}</td>
-                                                      <td>{itemVal.email}</td>
-                                                      <td>{itemVal.phone}</td>
-                                                      <td>{itemVal.website}</td>
-                                                      <td>
-                                                            <div className="action-name">
-                                                                  <Link className="btn btn-primary mr-2" to={`/users/view/${itemVal.id}`}>View</Link>
-                                                                  <Link className="btn btn-outline-primary mr-2" to={`/users/edit/${itemVal.id}`}>Edit</Link>
-                                                                  <button className="btn btn-danger" onClick={()=>{deleteUser(itemVal.id)}}>Delete</button>
-                                                            </div>
-                                                      </td>
-                                                </tr>
-                                          )
-                                    })
+                                    users.length !== 0 ?
+                                          users.map((itemVal, index)=>{
+                                                return (
+                                                      <tr key={index}>
+                                                            <th scope="row">{itemVal.id}</th>
+                                                            <td>{itemVal.name}</td>
+                                                            <td>{itemVal.username}</td>
+                                                            <td>{itemVal.email}</td>
+                                                            <td>{itemVal.phone}</td>
+                                                            <td>{itemVal.website}</td>
+                                                            <td>
+                                                                  <div className="action-name">
+                                                                        <Link className="btn btn-primary mr-2" to={`/users/view/${itemVal.id}`}>View</Link>
+                                                                        <Link className="btn btn-outline-primary mr-2" to={`/users/edit/${itemVal.id}`}>Edit</Link>
+                                                                        <button className="btn btn-danger" onClick={()=>{deleteUser(itemVal.id)}}>Delete</button>
+                                                                  </div>
+                                                            </td>
+                                                      </tr>
+                                                )
+                                          })
+                                    : 
+
+                                    <tr className="no-data">
+                                          <td colSpan="7" className="text-center p-5"><h1>No data</h1></td>
+                                    </tr>
                               }
 
                         </tbody>
