@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react_live_website/static/css/main.388f24ef.chunk.css",
-    "main.js": "/react_live_website/static/js/main.7b19374d.chunk.js",
-    "main.js.map": "/react_live_website/static/js/main.7b19374d.chunk.js.map",
+    "main.js": "/react_live_website/static/js/main.72a1ae70.chunk.js",
+    "main.js.map": "/react_live_website/static/js/main.72a1ae70.chunk.js.map",
     "runtime-main.js": "/react_live_website/static/js/runtime-main.ac455df6.js",
     "runtime-main.js.map": "/react_live_website/static/js/runtime-main.ac455df6.js.map",
     "static/css/2.26aea2c3.chunk.css": "/react_live_website/static/css/2.26aea2c3.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.26aea2c3.chunk.css",
     "static/js/2.9a18d0ac.chunk.js",
     "static/css/main.388f24ef.chunk.css",
-    "static/js/main.7b19374d.chunk.js"
+    "static/js/main.72a1ae70.chunk.js"
   ]
 }
