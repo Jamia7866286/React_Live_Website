@@ -7,6 +7,7 @@ const HomeComponent = () => {
 
       const history = useHistory();
       const [users, setUsers] = useState([]);
+      // const [deleteUser, setDeleteUser] = useState(false);
 
       useEffect(()=>{
             loadUsers();
@@ -20,8 +21,10 @@ const HomeComponent = () => {
 
       // Delete user
       const deleteUser = async(id)=> {
-            await axios.delete(`http://localhost:3001/users/${id}`);
-            loadUsers();
+            if (window.confirm("Do you want to delete item?") == true) {
+			await axios.delete(`http://localhost:3001/users/${id}`);
+                  loadUsers();
+		} 
       }
 
       return (
@@ -45,7 +48,7 @@ const HomeComponent = () => {
                                           users.map((itemVal, index)=>{
                                                 return (
                                                       <tr key={index}>
-                                                            <th scope="row">{itemVal.id}</th>
+                                                            <th scope="row">{index+1}</th>
                                                             <td>{itemVal.name}</td>
                                                             <td>{itemVal.username}</td>
                                                             <td>{itemVal.email}</td>
